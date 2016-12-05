@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import common.DataBaseManager;
 import model.Roominfo;
+import model.User;
 
 
 public class RoominfoManager extends DataBaseManager{
@@ -25,5 +26,12 @@ public class RoominfoManager extends DataBaseManager{
 		sql += "Select * from Roominfo Where ";
 		sql += " RID = "+ rid;
 		return (Roominfo)getRecord(sql);
+	}
+
+	public LinkedList<Roominfo> getRoominfoList(){
+		String sql = "";
+		sql += "Select * from Roominfo";
+
+		return (LinkedList<Roominfo>)getRecords(sql);
 	}
 }
